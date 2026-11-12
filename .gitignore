@@ -1,0 +1,34 @@
+node_modules/
+artifacts/
+*.log
+.tools/
+.runtime/
+
+# Credenciales y ajustes locales
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+
+# Entrega académica y archivos editables locales
+ENTREGA.html
+*.pdf
+*.docx
+*.pptx
+*.zip
+*.blend
+*.blend[0-9]*
+blender/
+
+# Generación local de recursos, documentos y paquetes
+scripts/create_*.py
+scripts/validate_documents.py
+scripts/package-deploy.py
+scripts/export-course.mjs
+scripts/export-pdf.mjs
+scripts/check-performance.mjs
+scripts/check-production.mjs
+scripts/check-route.mjs
