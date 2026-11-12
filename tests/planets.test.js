@@ -42,12 +42,13 @@ test('es posible completar las diez armas con proyectiles físicos reales', () =
   }
   assert.equal(r.phase, 'finished');
 });
-test('pintar roba casillas, empujar tiene cooldown y el nivel dura tres minutos', () => {
+test('pintar roba casillas, empujar tiene cooldown y el nivel dura dos minutos', () => {
   const r = game(2), a = r.players.get('p0'), b = r.players.get('p1'); settle(r); a.body.position.set(0, .55, 0); b.body.position.set(10, .55, 10); r.tick(7000); const owned = r.tileOwners.indexOf(a.slot); assert.ok(owned >= 0);
   a.body.position.set(8, .55, -8); b.body.position.set(0, .55, 0); r.tick(7020); assert.equal(r.tileOwners[owned], b.slot);
   a.body.position.set(0, .55, 0); b.body.position.set(1.4, .55, 0); r.setInput(a.id, { push: true }); r.tick(8000); assert.ok(b.knockX > 0); assert.equal(a.pushAt, 9400);
-  r.setInput(a.id, { push: true }); r.tick(8100); assert.equal(a.pushAt, 9400); assert.equal(r.endsAt - r.startAt, 180000);
-  r.tick(r.endsAt + 1); assert.equal(r.phase, 'finished');
+  r.setInput(a.id, { push: true }); r.tick(8100); assert.equal(a.pushAt, 9400); assert.equal(r.endsAt - r.startAt, 120000);
+  r.tick(r.endsAt - 1); assert.equal(r.phase, 'racing');
+  r.tick(r.endsAt); assert.equal(r.phase, 'finished');
 });
 test('cristales se recogen una vez, reaparecen y el quince cierra la ronda', () => {
   const r = game(3), p = r.players.get('p0'), c = r.crystals[0]; r.phase = 'racing'; p.body.position.set(c.x, c.y, c.z); r.tick(8000); assert.equal(p.crystals, 1); r.tick(8017); assert.equal(p.crystals, 1);

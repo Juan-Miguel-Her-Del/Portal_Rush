@@ -40,7 +40,7 @@ test('cuatro conexiones mantienen colores únicos, apariencia sincronizada y pin
     const room = game.rooms.get(code); assert.equal(room.players.size, 4); assert.equal(new Set([...room.players.values()].map(p => p.color)).size, 4);
     await new Promise(resolve => clients[0].emit('customize', { roughness: .95, metalness: .8, finish: 'carbon', accessory: 'halo' }, resolve));
     const updated = await once(clients[3], 'state'); assert.equal(updated.players.find(p => p.id === clients[0].id).appearance.roughness, .95);
-    clients[0].emit('start-race', { practice: true, level: 2 }); await wait(60); room.startAt = Date.now() - 1000; room.endsAt = Date.now() + 180000; await wait(650);
+    clients[0].emit('start-race', { practice: true, level: 2 }); await wait(60); room.startAt = Date.now() - 1000; room.endsAt = Date.now() + 120000; await wait(650);
     const painted = await once(clients[2], 'state'); assert.equal(painted.level, 2); assert.equal(painted.players.length, 4); assert.equal(new Set(painted.tiles.filter(owner => owner >= 0)).size, 4);
     for (const p of painted.players) assert.ok(p.territory > 0);
   } finally { for (const c of clients) c.disconnect(); await game.close(); }

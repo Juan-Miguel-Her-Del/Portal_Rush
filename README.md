@@ -23,7 +23,7 @@ Para acceso temporal desde otras redes, ejecutar `ABRIR_PUBLICO.bat` y compartir
 |---|---|---|
 | Mercurio | Carrera láser | Superar plataformas, láseres, obstáculos y portal hasta llegar al cohete. |
 | Marte | Arsenal orbital | Conseguir una eliminación con cada una de las diez armas. |
-| Neptuno | Guerra de color | Conservar más casillas pintadas al terminar los tres minutos. |
+| Neptuno | Guerra de color | Conservar más casillas pintadas al terminar los dos minutos. |
 | Urano | Fiebre de cristales | Reunir 15 cristales entre plataformas de baja gravedad. |
 | Venus | Última órbita | Sobrevivir a meteoritos que destruyen el suelo. |
 | Saturno | Laberinto de sombras | Recorrer el laberinto con linterna, guardar el checkpoint y encontrar la salida. |
