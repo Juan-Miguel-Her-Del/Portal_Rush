@@ -1,0 +1,13 @@
+node_modules
+.git
+.runtime
+.tools
+artifacts
+blender
+tests
+scripts
+*.zip
+*.pdf
+*.blend
+*.blend1
+*.log
